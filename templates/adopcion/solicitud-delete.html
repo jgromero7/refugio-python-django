@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <h3>¿Desea eliminar la slcitud de esta persona {{ object.persona.nombre }} {{ object.persona.apellido }}?</h3>
+        <button type="submit" class="btn btn-danger">Si, Eliminar</button>
+        <a class="btn btn-default" href="{% url 'adopcion:solicitud_listar' %}">No, Cancelar</a>
+    </form>
+{% endblock %}
